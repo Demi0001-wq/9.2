@@ -1,6 +1,6 @@
 from src.masks import get_mask_account, get_mask_card_number
 from src.widget import get_date, mask_account_card
-from src.processing import filter_by_state
+from src.processing import filter_by_state, sort_by_date
 
 if __name__ == "__main__":
     # Test masks
@@ -24,3 +24,8 @@ if __name__ == "__main__":
     ]
     print(f"Executed: {filter_by_state(data)}")
     print(f"Canceled: {filter_by_state(data, 'CANCELED')}")
+
+    print("\nSorted by date (descending):")
+    print(sort_by_date(data))
+    print("\nSorted by date (ascending):")
+    print(sort_by_date(data, reverse=False))
